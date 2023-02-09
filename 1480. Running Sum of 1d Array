@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& nums) {
+
+        //Used vector<int> since that's what function above is looking to return.
+        //Declared an array and made it length of original array size.
+        vector <int> myNums(nums.size());
+        //Declared a variable to hold int value as for loop cycles through array
+        int arraySum = 0;
+
+        //for loop to cycle through array
+        for(int x = 0 ; x < nums.size(); x++)
+        {
+        //Using arraySum variable to compute and update as for loop runs
+            arraySum += nums[x];
+        //As X in for increments by 1, so will the array element and it'll store the arraySum
+            myNums[x] = arraySum;
+        }
+        return myNums;
+    }
+};
