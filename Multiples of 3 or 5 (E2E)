@@ -1,0 +1,18 @@
+int solution(int number) 
+{
+  int multiplesSum = 0;
+  int results;
+
+  for(int x = 1; x < number; x++)
+  {
+    results = x;
+     
+     if(results % 3 == 0 || results % 5 == 0)
+        {
+          multiplesSum += results;
+      }
+
+  }
+      return multiplesSum;
+
+}
