@@ -1,15 +1,18 @@
 int solution(int number) 
 {
+//Set a value to update and store sum - multipleSum
   int multiplesSum = 0;
-  int results;
-
+  //Number below 10 that is a multiple means counting up from 0
+  int numCount;
+  //Loop to count up from the number 0 - 10 and store the number currently at in loop
   for(int x = 1; x < number; x++)
   {
-    results = x;
-     
-     if(results % 3 == 0 || results % 5 == 0)
+    numCount = x;
+     //Each number since this if is nested , will be divided by OR 5 and if there's left overs then not a multiple.
+     // If it is a multiple add that multiple to multipleSum and repeat until we're at 10(For Loop)
+     if(numCount % 3 == 0 || numCount % 5 == 0)
         {
-          multiplesSum += results;
+          multiplesSum += numCount;
       }
 
   }
