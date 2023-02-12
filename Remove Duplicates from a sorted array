@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+    //sets up an integer to check the second element in an array because if the first element [0] and the second is the same, it'll just be shifted over. 
+        int left = 1;
+    /*For loop that has a nested if statement that uses value 1 because when checking the previous element in the array, must used arr[x -1] and if the value is zero
+      it'll throw an error because can't deduct 1 from 0 */
+
+        //For loop that runs through array starting from the [1] and stops at the size of the array.
+        for(int right = 1; right < nums.size(); right++){
+        //Checks if the element before is equal to current element.Signifies a unique value.
+            if(nums[right] != nums[right - 1]){
+            //If they aren't equal then current element is pushed over to the left
+                nums[left] = nums[right];
+                //As per the for loop, increments left to go through next value of array.
+                left++;
+            }
+        }
+        //returns how many values are in the array because left only increments for every unique value
+        return left;
+    }
+};
