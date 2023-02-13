@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        //set to increment along with for loop so I can store values using this number later
+        int k = 0;
+        for (int x = 0; x < nums.size(); x++)
+        {
+            if (nums[x] != val)
+            {
+                //It is nums[k] = nums[x] instead because it stores it in the current position indicated by k where as viceversa just swaps the values
+                nums[k] = nums[x];
+                k++;
+            }
+        }
+        
+        return k;
+        
+    }
+};
