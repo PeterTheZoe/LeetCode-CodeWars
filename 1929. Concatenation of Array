@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> getConcatenation(vector<int>& nums) {
+        //Declared a new vector array double the size original array for storage
+        // whether I was concatenating or not, would've done this. 
+        vector<int> ansArr(nums.size() * 2);
+        //For loop to copy values over to new array.
+        for (int x = 0; x < nums.size(); x++)
+        {
+            ansArr[x] = nums[x];
+            //Also add values starting from available slot in array.
+            /*As per loop first storage checked in nums array + 0 which just replaces
+            value as nums.size() with itself, new values area added once loop reaches
+            x = 1 */
+            ansArr[nums.size() + x] = nums[x];
+        }    
+     
+return ansArr;    }
+
+};
