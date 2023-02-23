@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+        int maxWealth = 0;
+    //this for loop goes through every element in accounts, which on this case are arrays and stores in customer. 
+    //So is storing each array which are our customers in customer variable.
+    for(auto customer : accounts){
+    //Setting maxwealth variable to whatever the highest sum of wealth in current customer array cycling through. 
+    //Below compares maxWealth to sum of current customer array.
+    maxWealth = max (maxWealth, accumulate(customer.begin(), customer.end(), 0));
+    }
+    return maxWealth;
+    }
+};
